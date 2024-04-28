@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
-""" 11. More involved type annotations
-"""
+'''More involved type annotations'''
+from typing import Sequence, Union, Any, TypeVar, Mapping
 
-from typing import Any, Mapping, TypeVar, Union
-
-T = TypeVar('T')
+R = TypeVar('T')
 
 
 def safely_get_value(dct: Mapping, key: Any,
-                     default: Union[T, None] = None) -> Union[Any, T]:
-    """ Gets value safely.
-    """
+                     default: Union[R, None] = None) -> Union[Any, R]:
+    ''' Function safely_get_value '''
     if key in dct:
         return dct[key]
     else:
